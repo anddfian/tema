@@ -2,8 +2,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:tema/auth/forget_password.dart';
-import 'package:tema/auth/register.dart';
+import 'package:tema/pages/auth/forget_password.dart';
+import 'package:tema/pages/auth/register.dart';
+import 'package:tema/pages/students/student.dart';
 import 'package:tema/widgets/outlined_text_field.dart';
 
 class LoginWidget extends StatefulWidget {
@@ -153,7 +154,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           borderRadius:
                                               BorderRadius.circular(16.0),
                                         ),
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const StudentWidget()),
+                                              (Route<dynamic> route) => false);
+                                        },
                                         child: Text(
                                           'Masuk',
                                           style: TextStyle(

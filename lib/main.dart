@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tema/auth/login.dart';
+import 'package:tema/pages/auth/login.dart';
 import 'package:tema/color_schemes.dart';
 
 void main() {

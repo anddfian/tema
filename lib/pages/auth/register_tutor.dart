@@ -2,19 +2,20 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:tema/auth/forget_password.dart';
-import 'package:tema/auth/login.dart';
-import 'package:tema/auth/register.dart';
+import 'package:tema/pages/auth/forget_password.dart';
+import 'package:tema/pages/auth/login.dart';
+import 'package:tema/pages/auth/register.dart';
+import 'package:tema/pages/auth/register_tutor_interview.dart';
 import 'package:tema/widgets/outlined_text_field.dart';
 
-class RegisterStudentWidget extends StatefulWidget {
-  const RegisterStudentWidget({Key? key}) : super(key: key);
+class RegisterTutorWidget extends StatefulWidget {
+  const RegisterTutorWidget({Key? key}) : super(key: key);
 
   @override
-  State<RegisterStudentWidget> createState() => _RegisterStudentWidgetState();
+  State<RegisterTutorWidget> createState() => _RegisterTutorWidgetState();
 }
 
-class _RegisterStudentWidgetState extends State<RegisterStudentWidget> {
+class _RegisterTutorWidgetState extends State<RegisterTutorWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -38,7 +39,7 @@ class _RegisterStudentWidgetState extends State<RegisterStudentWidget> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         title: Text(
-          "Daftar Sebagai Siswa",
+          "Daftar Sebagai Pengajar",
           style: TextStyle(
             fontFamily: 'Nunito',
             color: Theme.of(context).colorScheme.onPrimary,
@@ -93,6 +94,19 @@ class _RegisterStudentWidgetState extends State<RegisterStudentWidget> {
                                           0, 8, 0, 0),
                                       child: Expanded(
                                         child: OutlinedTextField(
+                                          labelText: "No Telepon",
+                                          hintText: "No Telepon",
+                                          helperText: "Masukkan No Telepon",
+                                          prefixIcon: Icons.phone,
+                                          keyboardType: TextInputType.phone,
+                                        ),
+                                      ),
+                                    ),
+                                    const Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 8, 0, 0),
+                                      child: Expanded(
+                                        child: OutlinedTextField(
                                           labelText: "Email",
                                           hintText: "Email",
                                           helperText: "Masukkan Email",
@@ -128,9 +142,15 @@ class _RegisterStudentWidgetState extends State<RegisterStudentWidget> {
                                           borderRadius:
                                               BorderRadius.circular(16.0),
                                         ),
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const RegisterTutorInterviewWidget()));
+                                        },
                                         child: Text(
-                                          'Daftar',
+                                          'Lanjutkan',
                                           style: TextStyle(
                                             color: Theme.of(context)
                                                 .colorScheme

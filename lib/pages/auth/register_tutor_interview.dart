@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tema/auth/register_student.dart';
-import 'package:tema/auth/register_tutor.dart';
+import 'package:tema/pages/auth/register_student.dart';
+import 'package:tema/pages/auth/register_tutor.dart';
 import 'package:tema/widgets/outlined_text_field.dart';
 import 'package:timelines/timelines.dart';
 
