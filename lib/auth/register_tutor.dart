@@ -3,17 +3,19 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:tema/auth/forget_password.dart';
+import 'package:tema/auth/login.dart';
 import 'package:tema/auth/register.dart';
+import 'package:tema/auth/register_tutor_interview.dart';
 import 'package:tema/widgets/outlined_text_field.dart';
 
-class LoginWidget extends StatefulWidget {
-  const LoginWidget({Key? key}) : super(key: key);
+class RegisterTutorWidget extends StatefulWidget {
+  const RegisterTutorWidget({Key? key}) : super(key: key);
 
   @override
-  State<LoginWidget> createState() => _LoginWidgetState();
+  State<RegisterTutorWidget> createState() => _RegisterTutorWidgetState();
 }
 
-class _LoginWidgetState extends State<LoginWidget> {
+class _RegisterTutorWidgetState extends State<RegisterTutorWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -31,6 +33,21 @@ class _LoginWidgetState extends State<LoginWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        title: Text(
+          "Daftar Sebagai Pengajar",
+          style: TextStyle(
+            fontFamily: 'Nunito',
+            color: Theme.of(context).colorScheme.onPrimary,
+            fontSize: 16,
+          ),
+        ),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+      ),
       body: SafeArea(
         top: true,
         child: SingleChildScrollView(
@@ -38,46 +55,19 @@ class _LoginWidgetState extends State<LoginWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Container(
-                width: 300,
-                height: 240,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: Image.asset(
-                      'assets/images/login_img.png',
-                    ).image,
-                  ),
-                ),
-              ),
-              Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Column(
                     children: [
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0, 16, 0, 8),
-                        child: Text(
-                          'Masuk',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Nunito',
-                            color: Theme.of(context).colorScheme.primary,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0, 0, 0, 8),
+                                0, 16, 0, 8),
                             child: Container(
                               width: MediaQuery.of(context).size.width,
                               child: Padding(
@@ -87,6 +77,31 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
+                                    const Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 8, 0, 0),
+                                      child: Expanded(
+                                        child: OutlinedTextField(
+                                          labelText: "Username",
+                                          hintText: "Username",
+                                          helperText: "Masukkan Username",
+                                          prefixIcon: Icons.person,
+                                        ),
+                                      ),
+                                    ),
+                                    const Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 8, 0, 0),
+                                      child: Expanded(
+                                        child: OutlinedTextField(
+                                          labelText: "No Telepon",
+                                          hintText: "No Telepon",
+                                          helperText: "Masukkan No Telepon",
+                                          prefixIcon: Icons.phone,
+                                          keyboardType: TextInputType.phone,
+                                        ),
+                                      ),
+                                    ),
                                     const Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0, 8, 0, 0),
@@ -114,32 +129,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             obscureText: true,
                                           )),
                                     ),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 8),
-                                          child: TextButton(
-                                            onPressed: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          const ForgetPasswordWidget()));
-                                            },
-                                            child: Text(
-                                              "Lupa Password",
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Theme.of(context)
-                                                      .colorScheme
-                                                      .primary),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
                                     Padding(
                                       padding: const EdgeInsets.symmetric(
                                           vertical: 16.0),
@@ -153,9 +142,15 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           borderRadius:
                                               BorderRadius.circular(16.0),
                                         ),
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const RegisterTutorInterviewWidget()));
+                                        },
                                         child: Text(
-                                          'Masuk',
+                                          'Lanjutkan',
                                           style: TextStyle(
                                             color: Theme.of(context)
                                                 .colorScheme
@@ -172,7 +167,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         Expanded(child: Divider()),
                                         Padding(
                                           padding: const EdgeInsets.all(8.0),
-                                          child: Text("Atau masuk dengan"),
+                                          child: Text("Atau daftar dengan"),
                                         ),
                                         Expanded(child: Divider()),
                                       ],
@@ -208,7 +203,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               MainAxisAlignment.center,
                                           children: [
                                             const Text(
-                                              'Belum punya akun?',
+                                              'Sudah punya akun?',
                                               textAlign: TextAlign.center,
                                               style: TextStyle(
                                                 fontFamily: 'Nunito',
@@ -226,10 +221,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     context,
                                                     MaterialPageRoute(
                                                         builder: (context) =>
-                                                            const RegisterWidget()));
+                                                            const LoginWidget()));
                                               },
                                               child: Text(
-                                                "Daftar",
+                                                "Masuk",
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.w500,
                                                     color: Theme.of(context)

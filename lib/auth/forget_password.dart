@@ -41,105 +41,127 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
-      floatingActionButton: SizedBox(
-        width: MediaQuery.of(context)
-            .size
-            .width, // Adjust margin and padding as needed
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: FloatingActionButton.extended(
-            onPressed: () {},
-            backgroundColor: Theme.of(context).colorScheme.primary,
-            label: Text(
-              'Lanjutkan',
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.onPrimary,
-                fontSize: 16,
-              ),
-            ),
-          ),
-        ),
-      ),
+      // floatingActionButton: SizedBox(
+      //   width: MediaQuery.of(context)
+      //       .size
+      //       .width, // Adjust margin and padding as needed
+      //   child: Padding(
+      //     padding: const EdgeInsets.symmetric(horizontal: 16),
+      //     child: FloatingActionButton.extended(
+      //       onPressed: () {},
+      //       backgroundColor: Theme.of(context).colorScheme.primary,
+      //       label: Text(
+      //         'Lanjutkan',
+      //         style: TextStyle(
+      //           color: Theme.of(context).colorScheme.onPrimary,
+      //           fontSize: 16,
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      // ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
         top: true,
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Container(
-                width: 250,
-                height: 300,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: Image.asset(
-                      'assets/images/forget_img.png',
-                    ).image,
-                  ),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Container(
+              width: 250,
+              height: 300,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: Image.asset(
+                    'assets/images/forget_img.png',
+                  ).image,
                 ),
               ),
-              Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(16),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0, 16, 0, 8),
+                    child: Text(
+                      'Lupa Password',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Nunito',
+                        color: Theme.of(context).colorScheme.primary,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                   ),
-                  child: Column(
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0, 16, 0, 8),
-                        child: Text(
-                          'Lupa Password',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Nunito',
-                            color: Theme.of(context).colorScheme.primary,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
+                            const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 8),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                24, 16, 24, 16),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 8, 0, 0),
+                                  child: Expanded(
+                                    child: OutlinedTextField(
+                                      labelText: "Email",
+                                      hintText: "Email",
+                                      helperText: "Masukkan Email",
+                                      prefixIcon: Icons.mail,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0, 0, 0, 8),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width,
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    24, 16, 24, 16),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    const Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 8, 0, 0),
-                                      child: Expanded(
-                                        child: OutlinedTextField(
-                                          labelText: "Email",
-                                          hintText: "Email",
-                                          helperText: "Masukkan Email",
-                                          prefixIcon: Icons.mail,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
                     ],
-                  )),
-            ],
-          ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: MaterialButton(
+                    minWidth: double.infinity,
+                    height: 48,
+                    color: Theme.of(context).colorScheme.primary,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'Lanjutkan',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

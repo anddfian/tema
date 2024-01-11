@@ -152,6 +152,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "timelines",
+      "rootUri": "file:///Users/riskykurniawan/.pub-cache/hosted/pub.dev/timelines-0.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///Users/riskykurniawan/.pub-cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -170,7 +176,7 @@
       "languageVersion": "3.1"
     }
   ],
-  "generated": "2024-01-11T03:30:05.317573Z",
+  "generated": "2024-01-11T05:58:01.538843Z",
   "generator": "pub",
   "generatorVersion": "3.1.5"
 }
