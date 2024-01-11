@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:tema/auth/forget_password.dart';
 import 'package:tema/widgets/outlined_text_field.dart';
 
 class LoginWidget extends StatefulWidget {
@@ -88,11 +89,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           0, 8, 0, 0),
                                       child: Expanded(
                                         child: OutlinedTextField(
-                                          labelText: "No. HP",
-                                          hintText: "No. HP",
-                                          helperText: "Masukkan No. HP",
-                                          prefixIcon: Icons.phone_outlined,
-                                          keyboardType: TextInputType.number,
+                                          labelText: "Email",
+                                          hintText: "Email",
+                                          helperText: "Masukkan Email",
+                                          prefixIcon: Icons.mail,
                                         ),
                                       ),
                                     ),
@@ -117,27 +117,48 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         Padding(
                                           padding: const EdgeInsets.symmetric(
                                               vertical: 8),
-                                          child: Text(
-                                            "Lupa Password",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w500,
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .primary),
+                                          child: TextButton(
+                                            onPressed: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          const ForgetPasswordWidget()));
+                                            },
+                                            child: Text(
+                                              "Lupa Password",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .primary),
+                                            ),
                                           ),
                                         ),
                                       ],
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.symmetric(
-                                          vertical: 8.0),
-                                      child: FilledButton(
+                                          vertical: 16.0),
+                                      child: MaterialButton(
+                                        minWidth: double.infinity,
+                                        height: 48,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(16.0),
+                                        ),
                                         onPressed: () {},
-                                        child: const Text("Masuk"),
-                                        style: ButtonStyle(
-                                          minimumSize:
-                                              MaterialStateProperty.all(
-                                                  Size(double.infinity, 40)),
+                                        child: Text(
+                                          'Masuk',
+                                          style: TextStyle(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .onPrimary,
+                                            fontSize: 16,
+                                          ),
                                         ),
                                       ),
                                     ),
