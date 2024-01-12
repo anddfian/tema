@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:tema/pages/auth/login.dart';
+import 'package:tema/pages/teacher/edit_profile/edit_profile_teacher.dart';
 import 'package:tema/widgets/list_setting.dart';
-import 'package:tema/widgets/search_input.dart';
 
-class MoreStudentWidget extends StatefulWidget {
-  const MoreStudentWidget({super.key});
+class MoreTeacherWidget extends StatefulWidget {
+  const MoreTeacherWidget({super.key});
 
   @override
-  State<MoreStudentWidget> createState() => _MoreStudentWidgetState();
+  State<MoreTeacherWidget> createState() => _MoreTeacherWidgetState();
 }
 
-class _MoreStudentWidgetState extends State<MoreStudentWidget> {
+class _MoreTeacherWidgetState extends State<MoreTeacherWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -39,19 +39,21 @@ class _MoreStudentWidgetState extends State<MoreStudentWidget> {
         title: Row(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.only(end: 8.0),
+              padding: const EdgeInsetsDirectional.only(end: 16.0),
               child: CircleAvatar(
                 radius: 36,
                 backgroundColor:
                     Theme.of(context).colorScheme.onPrimary, // Border radius
                 child: ClipOval(
                     child: Image.asset(
-                        width: 64, height: 64, 'assets/images/profile.png')),
+                        width: 64,
+                        height: 64,
+                        'assets/images/dummy_tutor_1.png')),
               ),
             ),
             Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(
-                'Udin Kanaeru',
+                'Vestia Zeta',
                 style: TextStyle(
                     fontFamily: 'Nunito',
                     color: Theme.of(context).colorScheme.onPrimary,
@@ -59,7 +61,7 @@ class _MoreStudentWidgetState extends State<MoreStudentWidget> {
                     fontWeight: FontWeight.w600),
               ),
               Text(
-                'Total Belajar: 2',
+                'Total Siswa: 2',
                 style: TextStyle(
                     fontFamily: 'Nunito',
                     color: Theme.of(context).colorScheme.onPrimary,
@@ -73,13 +75,20 @@ class _MoreStudentWidgetState extends State<MoreStudentWidget> {
           Padding(
             padding: const EdgeInsetsDirectional.only(end: 16),
             child: IconButton(
-                icon: Icon(
-                  Icons.edit_outlined,
-                  color: Theme.of(context).colorScheme.onPrimary,
-                  size: 24,
-                ),
-                tooltip: 'Notifications',
-                onPressed: () {}),
+              icon: Icon(
+                Icons.edit_outlined,
+                color: Theme.of(context).colorScheme.onPrimary,
+                size: 24,
+              ),
+              tooltip: 'Notifications',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const EditProfileTeacherWidget()),
+                );
+              },
+            ),
           )
         ],
       ),

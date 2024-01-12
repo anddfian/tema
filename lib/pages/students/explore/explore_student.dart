@@ -33,14 +33,14 @@ class _ExploreStudentWidgetState extends State<ExploreStudentWidget> {
         title: Row(
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.all(8),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(0),
-                child: Image.asset(
-                  'assets/images/profile.png',
-                  width: 36,
-                  height: 36,
-                ),
+              padding: const EdgeInsetsDirectional.only(end: 8),
+              child: CircleAvatar(
+                radius: 21,
+                backgroundColor:
+                    Theme.of(context).colorScheme.primary, // Border radius
+                child: ClipOval(
+                    child: Image.asset(
+                        width: 36, height: 36, 'assets/images/profile.png')),
               ),
             ),
             Text(

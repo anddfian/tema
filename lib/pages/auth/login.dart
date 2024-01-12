@@ -5,6 +5,7 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:tema/pages/auth/forget_password.dart';
 import 'package:tema/pages/auth/register.dart';
 import 'package:tema/pages/students/student.dart';
+import 'package:tema/pages/teacher/teacher.dart';
 import 'package:tema/widgets/outlined_text_field.dart';
 
 class LoginWidget extends StatefulWidget {
@@ -61,14 +62,24 @@ class _LoginWidgetState extends State<LoginWidget> {
                       Padding(
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0, 16, 0, 8),
-                        child: Text(
-                          'Masuk',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Nunito',
-                            color: Theme.of(context).colorScheme.primary,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const TeacherWidget()),
+                                (Route<dynamic> route) => false);
+                          },
+                          child: Text(
+                            'Masuk',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Nunito',
+                              color: Theme.of(context).colorScheme.primary,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ),
                       ),

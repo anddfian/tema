@@ -9,16 +9,18 @@ class OutlinedTextField extends StatelessWidget {
   final bool obscureText;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
+  final int maxLines;
 
   const OutlinedTextField({
     Key? key,
     required this.labelText,
     required this.hintText,
-    required this.helperText,
+    this.helperText = "",
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
     this.prefixIcon,
     this.suffixIcon,
+    this.maxLines = 1,
   }) : super(key: key);
 
   @override
@@ -47,6 +49,7 @@ class OutlinedTextField extends StatelessWidget {
         ),
       ),
       inputFormatters: getInputFormatters(),
+      maxLines: maxLines,
       keyboardType: keyboardType,
       obscureText: obscureText,
     );

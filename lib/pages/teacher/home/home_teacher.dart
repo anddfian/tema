@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:tema/widgets/search_input.dart';
 
-class HomeStudentWidget extends StatefulWidget {
-  const HomeStudentWidget({super.key});
+class HomeTeacherWidget extends StatefulWidget {
+  const HomeTeacherWidget({super.key});
 
   @override
-  State<HomeStudentWidget> createState() => _HomeStudentWidgetState();
+  State<HomeTeacherWidget> createState() => _HomeTeacherWidgetState();
 }
 
-class _HomeStudentWidgetState extends State<HomeStudentWidget> {
+class _HomeTeacherWidgetState extends State<HomeTeacherWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -38,11 +38,13 @@ class _HomeStudentWidgetState extends State<HomeStudentWidget> {
                     Theme.of(context).colorScheme.onPrimary, // Border radius
                 child: ClipOval(
                     child: Image.asset(
-                        width: 36, height: 36, 'assets/images/profile.png')),
+                        width: 36,
+                        height: 36,
+                        'assets/images/dummy_tutor_1.png')),
               ),
             ),
             Text(
-              'Halo, Udin!',
+              'Halo, Vestia!',
               style: TextStyle(
                   fontFamily: 'Nunito',
                   color: Theme.of(context).colorScheme.onPrimary,
@@ -225,7 +227,7 @@ class _HomeStudentWidgetState extends State<HomeStudentWidget> {
                                                   .primary),
                                         ),
                                         Text(
-                                          "Kaela Kovalskia",
+                                          "Udin Samsudin",
                                           style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500,

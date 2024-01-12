@@ -1,16 +1,16 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-import 'package:tema/widgets/history_card_teacher.dart';
-import 'package:tema/widgets/search_input.dart';
+import 'package:tema/model/schedule.dart';
+import 'package:tema/widgets/taught_student_card.dart';
 
-class HistoryStudentWidget extends StatefulWidget {
-  const HistoryStudentWidget({super.key});
+class TaughtStudentWidget extends StatefulWidget {
+  const TaughtStudentWidget({super.key});
 
   @override
-  State<HistoryStudentWidget> createState() => _HistoryStudentWidgetState();
+  State<TaughtStudentWidget> createState() => _TaughtStudentWidgetState();
 }
 
-class _HistoryStudentWidgetState extends State<HistoryStudentWidget> {
+class _TaughtStudentWidgetState extends State<TaughtStudentWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -63,11 +63,13 @@ class _HistoryStudentWidgetState extends State<HistoryStudentWidget> {
                     Theme.of(context).colorScheme.primary, // Border radius
                 child: ClipOval(
                     child: Image.asset(
-                        width: 36, height: 36, 'assets/images/profile.png')),
+                        width: 36,
+                        height: 36,
+                        'assets/images/dummy_tutor_1.png')),
               ),
             ),
             Text(
-              'Udin Kanaeru',
+              'Vestia Zeta',
               style: TextStyle(
                   fontFamily: 'Nunito',
                   color: Theme.of(context).colorScheme.primary,
@@ -284,7 +286,13 @@ class _HistoryStudentWidgetState extends State<HistoryStudentWidget> {
               ),
               Column(
                 children: [
-                  HistoryCardTeacher(
+                  TaughtStudentCard(
+                    schedule: [
+                      Schedule(day: 'Selasa', time: '10:00 - 12:00'),
+                      Schedule(day: 'Rabu', time: '14:00 - 15:00'),
+                      Schedule(day: 'Sabtu', time: '15.30 - 17:00'),
+                      Schedule(day: 'Minggu', time: '13:00 - 14:00'),
+                    ],
                     onPressed: () {},
                     imageUrl: "assets/images/dummy_tutor_1.png",
                     name: "Vestia Zeta",
@@ -293,7 +301,14 @@ class _HistoryStudentWidgetState extends State<HistoryStudentWidget> {
                     startDate: "7 Jan 2024",
                     endDate: "7 Feb 2024",
                   ),
-                  HistoryCardTeacher(
+                  TaughtStudentCard(
+                    schedule: [
+                      Schedule(day: 'Senin', time: '08:00 - 09:30'),
+                      Schedule(day: 'Selasa', time: '10:00 - 12:00'),
+                      Schedule(day: 'Jumat', time: '11:45 - 12:45'),
+                      Schedule(day: 'Sabtu', time: '15.30 - 17:00'),
+                      Schedule(day: 'Minggu', time: '13:00 - 14:00'),
+                    ],
                     onPressed: () {},
                     imageUrl: "assets/images/dummy_tutor_1.png",
                     name: "Vestia Zeta",
@@ -302,7 +317,14 @@ class _HistoryStudentWidgetState extends State<HistoryStudentWidget> {
                     startDate: "7 Jan 2024",
                     endDate: "7 Feb 2024",
                   ),
-                  HistoryCardTeacher(
+                  TaughtStudentCard(
+                    schedule: [
+                      Schedule(day: 'Selasa', time: '10:00 - 12:00'),
+                      Schedule(day: 'Rabu', time: '14:00 - 15:00'),
+                      Schedule(day: 'Kamis', time: '09:30 - 11:00'),
+                      Schedule(day: 'Jumat', time: '11:45 - 12:45'),
+                      Schedule(day: 'Sabtu', time: '15.30 - 17:00'),
+                    ],
                     onPressed: () {},
                     imageUrl: "assets/images/dummy_tutor_1.png",
                     name: "Vestia Zeta",
@@ -311,7 +333,13 @@ class _HistoryStudentWidgetState extends State<HistoryStudentWidget> {
                     startDate: "7 Jan 2024",
                     endDate: "7 Feb 2024",
                   ),
-                  HistoryCardTeacher(
+                  TaughtStudentCard(
+                    schedule: [
+                      Schedule(day: 'Senin', time: '08:00 - 09:30'),
+                      Schedule(day: 'Jumat', time: '11:45 - 12:45'),
+                      Schedule(day: 'Sabtu', time: '15.30 - 17:00'),
+                      Schedule(day: 'Minggu', time: '13:00 - 14:00'),
+                    ],
                     onPressed: () {},
                     imageUrl: "assets/images/dummy_tutor_1.png",
                     name: "Vestia Zeta",
@@ -320,7 +348,11 @@ class _HistoryStudentWidgetState extends State<HistoryStudentWidget> {
                     startDate: "7 Des 2023",
                     endDate: "7 Jan 2024",
                   ),
-                  HistoryCardTeacher(
+                  TaughtStudentCard(
+                    schedule: [
+                      Schedule(day: 'Sabtu', time: '15.30 - 17:00'),
+                      Schedule(day: 'Minggu', time: '13:00 - 14:00'),
+                    ],
                     onPressed: () {},
                     imageUrl: "assets/images/dummy_tutor_1.png",
                     name: "Vestia Zeta",
@@ -329,7 +361,14 @@ class _HistoryStudentWidgetState extends State<HistoryStudentWidget> {
                     startDate: "7 Sep 2023",
                     endDate: "7 Nov 2023",
                   ),
-                  HistoryCardTeacher(
+                  TaughtStudentCard(
+                    schedule: [
+                      Schedule(day: 'Senin', time: '08:00 - 09:30'),
+                      Schedule(day: 'Selasa', time: '10:00 - 12:00'),
+                      Schedule(day: 'Rabu', time: '14:00 - 15:00'),
+                      Schedule(day: 'Kamis', time: '09:30 - 11:00'),
+                      Schedule(day: 'Jumat', time: '11:45 - 12:45'),
+                    ],
                     onPressed: () {},
                     imageUrl: "assets/images/dummy_tutor_1.png",
                     name: "Vestia Zeta",
@@ -338,28 +377,28 @@ class _HistoryStudentWidgetState extends State<HistoryStudentWidget> {
                     startDate: "7 Apr 2023",
                     endDate: "7 May 2023",
                   ),
-                  HistoryCardTeacher(
+                  TaughtStudentCard(
                     onPressed: () {},
                     imageUrl: "assets/images/dummy_tutor_1.png",
                     name: "Vestia Zeta",
                     subject: "Fisika, Matematika",
                     status: "cancel",
                   ),
-                  HistoryCardTeacher(
+                  TaughtStudentCard(
                     onPressed: () {},
                     imageUrl: "assets/images/dummy_tutor_1.png",
                     name: "Vestia Zeta",
                     subject: "Fisika, Matematika",
                     status: "cancel",
                   ),
-                  HistoryCardTeacher(
+                  TaughtStudentCard(
                     onPressed: () {},
                     imageUrl: "assets/images/dummy_tutor_1.png",
                     name: "Vestia Zeta",
                     subject: "Fisika, Matematika",
                     status: "cancel",
                   ),
-                  HistoryCardTeacher(
+                  TaughtStudentCard(
                     onPressed: () {},
                     imageUrl: "assets/images/dummy_tutor_1.png",
                     name: "Vestia Zeta",
