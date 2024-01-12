@@ -160,38 +160,6 @@ class _RegisterTutorWidgetState extends State<RegisterTutorWidget> {
                                         ),
                                       ),
                                     ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Expanded(child: Divider()),
-                                        Padding(
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: Text("Atau daftar dengan"),
-                                        ),
-                                        Expanded(child: Divider()),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.symmetric(vertical: 8),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SignInButton(
-                                            Buttons.Facebook,
-                                            mini: true,
-                                            onPressed: () {},
-                                          ),
-                                          SignInButton(
-                                            Buttons.Email,
-                                            mini: true,
-                                            onPressed: () {},
-                                          ),
-                                        ],
-                                      ),
-                                    ),
                                     Align(
                                       alignment: Alignment.bottomCenter,
                                       child: Padding(

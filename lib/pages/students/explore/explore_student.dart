@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tema/pages/students/detail_teacher/detail_teacher.dart';
 import 'package:tema/widgets/card_teacher.dart';
 import 'package:tema/widgets/search_input.dart';
 
@@ -118,49 +119,126 @@ class _ExploreStudentWidgetState extends State<ExploreStudentWidget> {
               Column(
                 children: [
                   CardTeacher(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailTeacherWidget()));
+                      },
                       imageUrl: "assets/images/dummy_tutor_1.png",
                       name: "Vestia Zeta",
-                      subject: "Fisika, Matematika, Kimia"),
+                      subject: "Fisika, Matematika"),
                   CardTeacher(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailTeacherWidget()));
+                      },
                       imageUrl: "assets/images/dummy_tutor_1.png",
                       name: "Vestia Zeta",
-                      subject: "Fisika, Matematika, Kimia"),
+                      subject: "Fisika, Matematika"),
                   CardTeacher(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailTeacherWidget()));
+                      },
                       imageUrl: "assets/images/dummy_tutor_1.png",
                       name: "Vestia Zeta",
-                      subject: "Fisika, Matematika, Kimia"),
+                      subject: "Fisika, Matematika"),
                   CardTeacher(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailTeacherWidget()));
+                      },
                       imageUrl: "assets/images/dummy_tutor_1.png",
                       name: "Vestia Zeta",
-                      subject: "Fisika, Matematika, Kimia"),
+                      subject: "Fisika, Matematika"),
                   CardTeacher(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailTeacherWidget()));
+                      },
                       imageUrl: "assets/images/dummy_tutor_1.png",
                       name: "Vestia Zeta",
-                      subject: "Fisika, Matematika, Kimia"),
+                      subject: "Fisika, Matematika"),
                   CardTeacher(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailTeacherWidget()));
+                      },
                       imageUrl: "assets/images/dummy_tutor_1.png",
                       name: "Vestia Zeta",
-                      subject: "Fisika, Matematika, Kimia"),
+                      subject: "Fisika, Matematika"),
                   CardTeacher(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailTeacherWidget()));
+                      },
                       imageUrl: "assets/images/dummy_tutor_1.png",
                       name: "Vestia Zeta",
-                      subject: "Fisika, Matematika, Kimia"),
+                      subject: "Fisika, Matematika"),
                   CardTeacher(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailTeacherWidget()));
+                      },
                       imageUrl: "assets/images/dummy_tutor_1.png",
                       name: "Vestia Zeta",
-                      subject: "Fisika, Matematika, Kimia"),
+                      subject: "Fisika, Matematika"),
                   CardTeacher(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailTeacherWidget()));
+                      },
                       imageUrl: "assets/images/dummy_tutor_1.png",
                       name: "Vestia Zeta",
-                      subject: "Fisika, Matematika, Kimia"),
+                      subject: "Fisika, Matematika"),
                   CardTeacher(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailTeacherWidget()));
+                      },
                       imageUrl: "assets/images/dummy_tutor_1.png",
                       name: "Vestia Zeta",
-                      subject: "Fisika, Matematika, Kimia"),
+                      subject: "Fisika, Matematika"),
                   CardTeacher(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const DetailTeacherWidget()));
+                      },
                       imageUrl: "assets/images/dummy_tutor_1.png",
                       name: "Vestia Zeta",
-                      subject: "Fisika, Matematika, Kimia"),
+                      subject: "Fisika, Matematika"),
                 ],
               )
             ],

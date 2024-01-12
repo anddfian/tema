@@ -7,19 +7,21 @@ class ListSetting extends StatelessWidget {
     required this.title,
     this.subtitle = "",
     this.color = Colors.black,
+    this.onPressed,
   });
 
   final IconData icon;
   final String title;
   final String subtitle;
   final Color color;
+  final VoidCallback? onPressed;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         MaterialButton(
           height: 72,
-          onPressed: () {},
+          onPressed: onPressed,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: Row(

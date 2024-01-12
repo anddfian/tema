@@ -39,6 +39,7 @@ dependencies:
   flutter_signin_button: ^2.0.0
   timelines: ^0.1.0
   dropdown_button2: ^2.3.9
+  chips_choice: ^3.0.1
 
 dev_dependencies:
   flutter_test:

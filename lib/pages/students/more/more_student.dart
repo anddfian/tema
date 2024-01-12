@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tema/pages/auth/login.dart';
 import 'package:tema/widgets/list_setting.dart';
 import 'package:tema/widgets/search_input.dart';
 
@@ -133,6 +134,13 @@ class _MoreStudentWidgetState extends State<MoreStudentWidget> {
                 title: "Tentang Aplikasi",
                 subtitle: ""),
             ListSetting(
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginWidget()),
+                      (Route<dynamic> route) => false);
+                },
                 icon: Icons.logout,
                 title: "Keluar dari Akun ini",
                 color: Colors.red,

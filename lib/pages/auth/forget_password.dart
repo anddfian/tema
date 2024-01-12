@@ -32,7 +32,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         title: Text(
-          "Kembali",
+          "Lupa Password",
           style: TextStyle(
             fontFamily: 'Nunito',
             color: Theme.of(context).colorScheme.onPrimary,
@@ -60,7 +60,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
       //     ),
       //   ),
       // ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
         top: true,
         child: Column(
